@@ -36,3 +36,54 @@ To compile the shell, use the following command:
 
 ```bash
 gcc -o custom_shell shell.c -lreadline
+```
+## Running the Shell
+To run the shell:
+
+```bash
+./custom_shell
+```
+## Executing Commands:
+You can run standard Linux commands like `ls`, `cd`, `pwd`, and the custom commands mentioned above. For text processing, specify the command and the file as arguments:
+
+```bash
+A filename.txt
+B filename.txt
+```
+### Example for custom command A (prints the first word from each line):
+
+```bash
+A file.txt
+```
+### Piped Commands: 
+Example of a piped command:
+
+```bash
+ls | grep "text"
+```
+### Example Session
+
+```bash
+/home/user/Desktop> cd /home/user/Documents
+/home/user/Documents> ls
+file1.txt file2.txt
+/home/user/Documents> A file1.txt
+first_word_of_each_line
+```
+## Technologies Used
+
+- **Language:** C
+- **Libraries:** `readline` for command history
+- **System Calls:** `fork`, `execvp`, `getpid`, `wait`, `pipe`
+
+## Notes
+
+- The shell supports basic command execution and text processing.
+- It utilizes `fork()` for process creation and `execvp()` for command execution.
+- Custom commands such as `A`, `B`, `C`, `D`, `F`, and `G` are defined for text processing tasks.
+
+## Contribution
+
+Feel free to fork this project and submit pull requests for improvements or bug fixes!
+
+
